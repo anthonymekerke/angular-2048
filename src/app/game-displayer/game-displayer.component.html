@@ -1,0 +1,19 @@
+<span class="container">
+
+    <table>
+        <tr *ngFor="let in of counter(engine._size); let i = index">
+            <td *ngFor="let in of counter(engine._size); let j = index">
+                <span *ngIf="engine.get(i,j) != 0; else elseBlock" class="tile" id="{{engine.get(i,j)}}">
+                    {{ engine.get(i,j) }}
+                </span>
+                <ng-template #elseBlock><span></span></ng-template>
+            </td>
+        </tr>
+    </table>
+
+    <span>
+        <button (click)="reset()">reset</button>
+    </span>
+
+</span>
+
